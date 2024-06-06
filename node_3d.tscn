@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://c3ur27utktolw"]
+[gd_scene load_steps=7 format=3 uid="uid://c3ur27utktolw"]
+
+[ext_resource type="Shape3D" path="Player1.tres" id="1_nn86r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o0d2v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u735u"]
+albedo_color = Color(0, 0.547003, 0.911061, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qe35p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n1fah"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bny1"]
+albedo_color = Color(0.963785, 0, 0.324004, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Player1" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player1"]
+shape = ExtResource("1_nn86r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player1/CollisionShape3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("BoxMesh_o0d2v")
+surface_material_override/0 = SubResource("StandardMaterial3D_u735u")
+metadata/_edit_lock_ = true
+
+[node name="Player2" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+shape = SubResource("BoxShape3D_qe35p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player2/CollisionShape3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("BoxMesh_n1fah")
+surface_material_override/0 = SubResource("StandardMaterial3D_2bny1")
+metadata/_edit_lock_ = true
