@@ -30,6 +30,18 @@ One word: Compatability
 
 My current thoughts are that the game can be free to download and compile if anyone wants (hence the open source) but will also have a Steam version which I will charge money for. The consumer advantage of using the steam version would be automatic updates & convenience of having it bound to their account.
 
+## Art & Assets
+
+This is a much less thought out part of the game that I imagine could come later in development. My current idea is to use animals I have a connection to as the various fighters in the game. Eg. bunny, monkey, panda.
+
+### 3D Art (preferred)
+For the models, I will have to learn how to create 3D models in Blender. While learning to use Blender, I believe I could also create a rig for the bodies and program different animations in. I'm not 100% sure about this, but it could be a decent approach to start.
+
+### 2D Art
+I want to avoid doing a 2D game, even though it may be a little easier for me to create the art for, and may be easier to run on certain systems. However, I am insistent on doing this game in a 2.5D style for the flexibility that extra dimension can provide when animating, and designing the gameplay.
+
+However, learning and creating models in 3D may be a huge time investment. So, another approach to the art would be creating pixel art in Aseprite, since that is something I have a little bit of practice in.
+
 ## Goals/Accomplishments
 
 - [x] Render two cubes
