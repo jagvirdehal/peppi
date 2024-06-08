@@ -9,10 +9,10 @@ The gameplay will be a fast paced 2.5d platform fighter
 ## Goals/Accomplishments
 
 - [x] Render two cubes
-- [ ] Environment
-  - [ ] Add a stage
-  - [ ] Add lighting
-  - [ ] Add a camera
+- [x] Environment
+  - [x] Add a stage
+  - [x] Add lighting
+  - [x] Add a camera
 - [ ] Physics
   - [ ] Implement gravity
   - [ ] Collision

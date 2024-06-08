@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3ur27utktolw"]
+[gd_scene load_steps=10 format=3 uid="uid://c3ur27utktolw"]
 
-[ext_resource type="Shape3D" path="Player1.tres" id="1_nn86r"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5jcap"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o0d2v"]
 
@@ -14,12 +14,27 @@ albedo_color = Color(0, 0.547003, 0.911061, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bny1"]
 albedo_color = Color(0.963785, 0, 0.324004, 1)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x2dp4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ufht5"]
+sky_material = SubResource("ProceduralSkyMaterial_x2dp4")
+
+[sub_resource type="Environment" id="Environment_av8jd"]
+background_mode = 2
+sky = SubResource("Sky_ufht5")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player1" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player1"]
-shape = ExtResource("1_nn86r")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_5jcap")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player1/CollisionShape3D"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
@@ -28,9 +43,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u735u")
 metadata/_edit_lock_ = true
 
 [node name="Player2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_qe35p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player2/CollisionShape3D"]
@@ -38,3 +54,24 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 mesh = SubResource("BoxMesh_n1fah")
 surface_material_override/0 = SubResource("StandardMaterial3D_2bny1")
 metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+polygon = PackedVector2Array(5, 0, -5, 0, -4, -1, 4, -1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="StaticBody3D/CollisionPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+polygon = PackedVector2Array(5, 0, -5, 0, -4, -1, 4, -1)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_av8jd")
