@@ -44,16 +44,45 @@ However, learning and creating models in 3D may be a huge time investment. So, a
 
 ## Goals/Accomplishments
 
+### Getting started
 - [x] Render two cubes
 - [x] Environment
   - [x] Add a stage
   - [x] Add lighting
   - [x] Add a camera
-- [ ] Physics
-  - [ ] Implement gravity
-  - [ ] Collision
-- [ ] Control
-  - [ ] Control a cube with WASD
-  - [ ] Control a cube with Arrow Keys
-  - [ ] Add jumping
+- [x] Physics
+  - [x] Implement gravity
+  - [x] Collision
+- [x] Control
+  - [x] Control a cube with WASD
+  - [x] Control a cube with Arrow Keys
+  - [x] Add jumping
   - [ ] Add controller support
+
+### Art & Animation
+- [ ] Learn Blender
+  - [ ] Create a gear with a handle
+  - [ ] Rig & animate the gear
+  - [ ] Texture the wheel in Blender/Godot
+  - [ ] Import the wheel
+  - [ ] Connect the wheel to Godot inputs
+- [ ] Model a character in Blender
+  - [ ] Create a 3D stick-man
+  - [ ] Rig it
+  - [ ] Texture it
+  - [ ] Import it
+  - [ ] Connect it to inputs
+  - [ ] Test a basic animation in Godot
+
+### Gameplay & Logic
+- [ ] Combat
+  - [ ] Add "attack" hitboxes to characters
+  - [ ] Implement a basic attack
+  - [ ] Implement damage
+	- [ ] Add a simple UI to show current damage %
+  - [ ] Add knockback
+- [ ] Lives
+  - [ ] Add a life counter
+  - [ ] Kill the character when they fall off the stage
+  - [ ] Respawn the character
+  - [ ] Running out of lives ends the game immediately
