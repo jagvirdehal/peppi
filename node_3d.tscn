@@ -1,18 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3ur27utktolw"]
+[gd_scene load_steps=11 format=3 uid="uid://c3ur27utktolw"]
 
-[ext_resource type="Script" path="res://Player1.gd" id="1_a4ihm"]
-[ext_resource type="Script" path="res://Player2.gd" id="2_xtw4l"]
+[ext_resource type="Script" path="res://Player.gd" id="1_x0ag1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5jcap"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_o0d2v"]
+[sub_resource type="PrismMesh" id="PrismMesh_f8p1k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u735u"]
 albedo_color = Color(0, 0.547003, 0.911061, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qe35p"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_n1fah"]
+[sub_resource type="PrismMesh" id="PrismMesh_mqgdl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bny1"]
 albedo_color = Color(0.963785, 0, 0.324004, 1)
@@ -34,27 +33,31 @@ glow_enabled = true
 
 [node name="Player1" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
-script = ExtResource("1_a4ihm")
+script = ExtResource("1_x0ag1")
+player_prefix = "p1"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_5jcap")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player1/CollisionShape3D"]
-mesh = SubResource("BoxMesh_o0d2v")
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0, 0, 0)
+mesh = SubResource("PrismMesh_f8p1k")
 surface_material_override/0 = SubResource("StandardMaterial3D_u735u")
 metadata/_edit_lock_ = true
 
 [node name="Player2" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-script = ExtResource("2_xtw4l")
+script = ExtResource("1_x0ag1")
+player_prefix = "p2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_qe35p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player2/CollisionShape3D"]
-mesh = SubResource("BoxMesh_n1fah")
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_mqgdl")
 surface_material_override/0 = SubResource("StandardMaterial3D_2bny1")
 metadata/_edit_lock_ = true
 

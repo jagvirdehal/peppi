@@ -75,6 +75,13 @@ However, learning and creating models in 3D may be a huge time investment. So, a
   - [ ] Test a basic animation in Godot
 
 ### Gameplay & Logic
+- [ ] Movement
+  - [x] Add fast fall
+  - [x] Add double jumping
+  - [x] Add short-hop
+  - [ ] Add turning (face direction of movement)
+  - [ ] Add dashing
+  - [ ] Add landing lag
 - [ ] Combat
   - [ ] Add "attack" hitboxes to characters
   - [ ] Implement a basic attack
